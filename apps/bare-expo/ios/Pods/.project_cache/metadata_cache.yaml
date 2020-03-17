@@ -22,6 +22,10 @@ CocoaLibEvent:
   LABEL: CocoaLibEvent
   PROJECT_PATH: CocoaLibEvent.xcodeproj
   UUID: 0E4F8F3811F0945641866082B5F12145
+CocoaLumberjack:
+  LABEL: CocoaLumberjack
+  PROJECT_PATH: CocoaLumberjack.xcodeproj
+  UUID: 85392ABCB5967FC7F189FA544F4E883D
 DoubleConversion:
   LABEL: DoubleConversion
   PROJECT_PATH: DoubleConversion.xcodeproj
@@ -378,18 +382,6 @@ OpenSSL-Universal:
   LABEL: OpenSSL-Universal
   PROJECT_PATH: OpenSSL-Universal.xcodeproj
   UUID: 6F68E8F1AF30EB52FE60841D139BAC02
-Pods-BareExpo:
-  LABEL: Pods-BareExpo
-  PROJECT_PATH: Pods.xcodeproj
-  UUID: C616BB9F650D110E835D02A3250F302E
-Pods-BareExpo-BareExpoDetox:
-  LABEL: Pods-BareExpo-BareExpoDetox
-  PROJECT_PATH: Pods.xcodeproj
-  UUID: 3073489CFE29413CFF52BC8FA82CA34B
-Pods-BareExpoDetox:
-  LABEL: Pods-BareExpoDetox
-  PROJECT_PATH: Pods.xcodeproj
-  UUID: 8486B2A5C2EC037965B3C875451C8BBC
 Pods-BareExpoMain-BareExpo:
   LABEL: Pods-BareExpoMain-BareExpo
   PROJECT_PATH: Pods.xcodeproj
@@ -558,6 +550,14 @@ SDWebImage:
   LABEL: SDWebImage
   PROJECT_PATH: SDWebImage.xcodeproj
   UUID: 4ECF4E662EEBE4FA58102FF984D920CC
+SDWebImageSVGKitPlugin:
+  LABEL: SDWebImageSVGKitPlugin
+  PROJECT_PATH: SDWebImageSVGKitPlugin.xcodeproj
+  UUID: FA58565F770339D4895C202AB5B30D4E
+SVGKit:
+  LABEL: SVGKit
+  PROJECT_PATH: SVGKit.xcodeproj
+  UUID: 1A3836177B5D4E99F4E935D1479ECB0C
 UMAppLoader:
   LABEL: UMAppLoader
   PROJECT_PATH: UMAppLoader.xcodeproj

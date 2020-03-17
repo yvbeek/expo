@@ -58,6 +58,16 @@ CACHE_KEYS:
     PROJECT_NAME: CocoaLibEvent
     SPECS:
       - CocoaLibEvent (1.0.0)
+  CocoaLumberjack:
+    BUILD_SETTINGS_CHECKSUM:
+      CocoaLumberjack:
+        :debug: 0d4813f102175b795641190a04fa9594
+        :release: 0d4813f102175b795641190a04fa9594
+    CHECKSUM: e8955b9d337ac307103b0a34fd141c32f27e53c5
+    PROJECT_NAME: CocoaLumberjack
+    SPECS:
+      - CocoaLumberjack (3.7.0)
+      - CocoaLumberjack/Core (3.7.0)
   DoubleConversion:
     BUILD_SETTINGS_CHECKSUM:
       DoubleConversion:
@@ -935,9 +945,9 @@ CACHE_KEYS:
   expo-image:
     BUILD_SETTINGS_CHECKSUM:
       expo-image:
-        :debug: c70070a4832fdd505cd079254e6663aa
-        :release: c70070a4832fdd505cd079254e6663aa
-    CHECKSUM: dc52ebb150b98a54d6023cd7448141e7366598d0
+        :debug: b6c5a45dbd60333372380630ef43374a
+        :release: b6c5a45dbd60333372380630ef43374a
+    CHECKSUM: b75d48ad9a1a6dd1b1d10293a90b9e5f1b6788dd
     FILES:
       - "../../../../packages/expo-image/ios/EXImageBorders.h"
       - "../../../../packages/expo-image/ios/EXImageBorders.m"
@@ -1458,8 +1468,8 @@ CACHE_KEYS:
       - OpenSSL-Universal/Static (1.0.2.20)
   Pods-BareExpoMain-BareExpo:
     BUILD_SETTINGS_CHECKSUM:
-      Debug: 806dc0c1e7d7f905e119f079192de50a
-      Release: d8f725df6d006338738577b3101ab906
+      Debug: e9e0e0469d76a88e599908601006d024
+      Release: 3e9f0d0e6253da79f316f2867ef07a3d
     FILES:
       - "${PODS_CONFIGURATION_BUILD_DIR}/EXDevMenu/EXDevMenu.bundle"
       - "${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle"
@@ -1468,8 +1478,8 @@ CACHE_KEYS:
       - "${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle"
   Pods-BareExpoMain-BareExpoDetox:
     BUILD_SETTINGS_CHECKSUM:
-      Debug: 2c6348d227e12af3d601d9753e9f38d5
-      Release: 1fbd6e2b1ca60c9a59bb94291637801e
+      Debug: fd2817dacf4c14aa3e34613c3e372acb
+      Release: d48f3060fdaec6898d0f4a489c53da49
     FILES:
       - "${PODS_CONFIGURATION_BUILD_DIR}/EXDevMenu/EXDevMenu.bundle"
       - "${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle"
@@ -1478,8 +1488,8 @@ CACHE_KEYS:
       - "${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle"
   Pods-BareExpoTests:
     BUILD_SETTINGS_CHECKSUM:
-      Debug: 353980e500f1416ef4f48f8bd07311fa
-      Release: 353980e500f1416ef4f48f8bd07311fa
+      Debug: 4aa0356c7c20768ce5624ef87b155892
+      Release: 4aa0356c7c20768ce5624ef87b155892
   PromisesObjC:
     BUILD_SETTINGS_CHECKSUM:
       PromisesObjC:
@@ -2827,6 +2837,24 @@ CACHE_KEYS:
     SPECS:
       - SDWebImage (5.8.1)
       - SDWebImage/Core (5.8.1)
+  SDWebImageSVGKitPlugin:
+    BUILD_SETTINGS_CHECKSUM:
+      SDWebImageSVGKitPlugin:
+        :debug: 3e8a675e9317f23cf2b32e5f6b0b26c0
+        :release: 3e8a675e9317f23cf2b32e5f6b0b26c0
+    CHECKSUM: 06a811c05b9e839982baeb5251d15fe7a79abb82
+    PROJECT_NAME: SDWebImageSVGKitPlugin
+    SPECS:
+      - SDWebImageSVGKitPlugin (1.2.0)
+  SVGKit:
+    BUILD_SETTINGS_CHECKSUM:
+      SVGKit:
+        :debug: c48b0070785243c6d92261eb1a90aa89
+        :release: c48b0070785243c6d92261eb1a90aa89
+    CHECKSUM: 652cdf7bef8bec8564d04a8511d3ab50c7595fac
+    PROJECT_NAME: SVGKit
+    SPECS:
+      - SVGKit (2.1.1)
   UMAppLoader:
     BUILD_SETTINGS_CHECKSUM:
       UMAppLoader:

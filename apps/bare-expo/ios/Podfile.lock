@@ -9,6 +9,9 @@ PODS:
   - boost-for-react-native (1.63.0)
   - CocoaAsyncSocket (7.6.4)
   - CocoaLibEvent (1.0.0)
+  - CocoaLumberjack (3.7.0):
+    - CocoaLumberjack/Core (= 3.7.0)
+  - CocoaLumberjack/Core (3.7.0)
   - DoubleConversion (1.1.6)
   - EXAmplitude (9.0.0):
     - Amplitude (~> 6.0.0)
@@ -147,6 +150,7 @@ PODS:
   - expo-image (1.0.0-alpha.0):
     - React-Core
     - SDWebImage (~> 5.0)
+    - SDWebImageSVGKitPlugin (~> 1.2)
   - EXPrint (9.2.0):
     - UMCore
     - UMFileSystemInterface
@@ -606,6 +610,11 @@ PODS:
   - SDWebImage (5.8.1):
     - SDWebImage/Core (= 5.8.1)
   - SDWebImage/Core (5.8.1)
+  - SDWebImageSVGKitPlugin (1.2.0):
+    - SDWebImage/Core (~> 5.6)
+    - SVGKit (>= 2.1)
+  - SVGKit (2.1.1):
+    - CocoaLumberjack (~> 3.0)
   - UMAppLoader (1.4.0)
   - UMBarCodeScannerInterface (5.4.0)
   - UMCameraInterface (5.4.0)
@@ -777,6 +786,7 @@ SPEC REPOS:
     - boost-for-react-native
     - CocoaAsyncSocket
     - CocoaLibEvent
+    - CocoaLumberjack
     - FBSDKCoreKit
     - FBSDKLoginKit
     - Firebase
@@ -803,6 +813,8 @@ SPEC REPOS:
     - OpenSSL-Universal
     - PromisesObjC
     - SDWebImage
+    - SDWebImageSVGKitPlugin
+    - SVGKit
     - YogaKit
     - ZXingObjC
 
@@ -1045,6 +1057,7 @@ SPEC CHECKSUMS:
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   CocoaAsyncSocket: 694058e7c0ed05a9e217d1b3c7ded962f4180845
   CocoaLibEvent: 2fab71b8bd46dd33ddb959f7928ec5909f838e3f
+  CocoaLumberjack: e8955b9d337ac307103b0a34fd141c32f27e53c5
   DoubleConversion: cde416483dac037923206447da6e1454df403714
   EXAmplitude: d0adb393cd13c743d9609fdb44379df03f7a1ff2
   EXAppAuth: 9709f199b78e50b6ac0b2c8683519670c1918378
@@ -1090,7 +1103,7 @@ SPEC CHECKSUMS:
   EXNotifications: 3992453112f1f3bd878b2921563f6dfe2dd0c7d6
   EXPermissions: 17d4846ad1880f6891c74ae58ca1acb43e47ed47
   expo-development-client: 5fb69bff52bfa142fce610a6917e22f610bc12f7
-  expo-image: dc52ebb150b98a54d6023cd7448141e7366598d0
+  expo-image: b75d48ad9a1a6dd1b1d10293a90b9e5f1b6788dd
   EXPrint: 84791aa4c239b4743950e98902feec6487ad064f
   EXRandom: d7e0f3dd64810aabd27d59f8ecffee359177e2c3
   EXScreenCapture: 55b619b29d6a2fefb8ff1a56f340258fd5b7368a
@@ -1173,6 +1186,8 @@ SPEC CHECKSUMS:
   RNSharedElement: 00b1a1420d213a34459bb9a5aacabb38107d7948
   RNSVG: ce9d996113475209013317e48b05c21ee988d42e
   SDWebImage: e3eae2eda88578db0685a0c88597fdadd9433f05
+  SDWebImageSVGKitPlugin: 06a811c05b9e839982baeb5251d15fe7a79abb82
+  SVGKit: 652cdf7bef8bec8564d04a8511d3ab50c7595fac
   UMAppLoader: 92d044af52626af3d81a69796ad666fc7a9a7d78
   UMBarCodeScannerInterface: 3f6c1b09ef4b867ce752b8c0b3893bcf9cd85f32
   UMCameraInterface: d516032121192fee9a6c93bdfff0bb2cc7282796
@@ -1189,6 +1204,6 @@ SPEC CHECKSUMS:
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
 
-PODFILE CHECKSUM: b1437f6a283cf5bd7a71ac220561e61db1ccc948
+PODFILE CHECKSUM: e41eb10518755f265e9835a6010d63e705dc7082
 
 COCOAPODS: 1.10.0
