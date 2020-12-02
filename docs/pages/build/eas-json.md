@@ -45,7 +45,7 @@ Where `PLATFORM_NAME` is one of `android` or `ios`.
 
 ## Build Profiles
 
-There are two types of build profiles - generic and managed. _(Building managed projects is not supported at the moment.)_
+There are two types of build profiles - generic and managed.
 
 **Generic projects** make almost no assumptions about your project's structure. The only requirement is that your project follows the general structure of React Native projects. This means there are `android` and `ios` directories in the root directory with the Gradle and Xcode projects, respectively. No matter if you've intialized your project with `expo init` or with `npx react-native init`, you should be able to build it with EAS Build.
 
@@ -64,6 +64,7 @@ The schema of a build profile for a generic Android project looks like this:
   "withoutCredentials": boolean, // default: false
   "gradleCommand": string, // default: ":app:bundleRelease"
   "artifactPath": string // default: "android/app/build/outputs/**/*.{apk,aab}"
+  "releaseChannel": string | undefined // default: undefined
 }
 ```
 
@@ -72,6 +73,7 @@ The schema of a build profile for a generic Android project looks like this:
 - `withoutCredentials` when set to `true`, Expo CLI won't require you to configure credentials when building the app using this profile. It comes in handy when you want to build debug binaries and the debug keystore is checked in to the repository. The default is `false`.
 - `gradleCommand` defines the Gradle task to be run on Expo servers to build your project. You can set it to any valid Gradle task, e.g. `:app:assembleDebug` to build a debug binary. The default Gradle command is `:app:bundleRelease`.
 - `artifactPath` is the path (or pattern) where EAS Build is going to look for the build artifacts. EAS Build uses the `fast-glob` npm package for pattern matching, [see their README to learn more about the syntax you can use](https://github.com/mrmlnc/fast-glob#pattern-syntax). The default value is `android/app/build/outputs/**/*.{apk,aab}`.
+- `releaseChannel` specifies release channel for `expo-updates` package if it's installed ([learn more on this here](../distribution/release-channels.md))
 
 #### Examples
 
@@ -106,15 +108,40 @@ If you'd like to build a debug APK use the following example. Also, make sure th
 
 ### Managed Project
 
-Managed projects are not supported at the moment but the profile's schema is going to look like this:
+The schema of a build profile for a managed Android project looks like this:
 
 ```json
 {
   "workflow": "managed",
   "credentialsSource": "local" | "remote" | "auto", // default: "auto"
   "buildType": "app-bundle" | "apk" // default: "app-bundle"
+  "releaseChannel": string | undefined // default: undefined
 }
 ```
+
+- `"workflow": "managed"` indicates that your project is a managed one.
+- `credentialsSource` defines the source of credentials for this build profile. If you want to take advantage of your own `credentials.json` file, set this to `local` ([learn more on this here](advanced-credentials-configuration.md)). If you want to use the credentials Expo already has stored for you, choose `remote`. If you're not sure what to do but you probably won't be running builds from a CI, choose `auto` (this is the default option).
+- `releaseChannel` specifies release channel for `expo-updates` package if it's installed ([learn more on this here](../distribution/release-channels.md))
+
+#### Examples
+
+This is the minimal working example. Expo CLI will ask you for the app's credentials, the project will be built `.aab` file.
+```json
+{
+  "workflow": "managed"
+}
+```
+
+If you'd like to build a release APK (AAB is built by default), use this example:
+
+```json
+{
+  "workflow": "managed",
+  "gradleCommand": ":app:assembleRelease",
+  "artifactPath": "android/app/build/outputs/apk/release/app-release.apk"
+}
+```
+
 
 ## iOS
 
@@ -128,6 +155,7 @@ The schema of a build profile for a generic iOS project looks like this:
   "credentialsSource": "local" | "remote" | "auto", // default: "auto"
   "scheme": string,
   "artifactPath": string // default: "ios/build/App.ipa"
+  "releaseChannel": string | undefined // default: undefined
 }
 ```
 
@@ -135,6 +163,7 @@ The schema of a build profile for a generic iOS project looks like this:
 - `credentialsSource` defines the source of credentials for this build profile. If you want to take advantage of your own `credentials.json` file, set this to `local` ([learn more on this here](advanced-credentials-configuration.md)). If you want to use the credentials Expo already has stored for you, choose `remote`. If you're not sure what to do but you probably won't be running builds from a CI, choose `auto` (this is the default option).
 - `scheme` defines the Xcode project's scheme to build. You should set it if your project has multiple schemes. Please note that if the project has only one scheme, it will automatically be detected. However, if multiple schemes exist and this value is **not** set, Expo CLI will prompt you to select one of them.
 - `artifactPath` is the path (or pattern) where EAS Build is going to look for the build artifacts. EAS Build uses the `fast-glob` npm package for pattern matching, [see their README to learn more about the syntax you can use](https://github.com/mrmlnc/fast-glob#pattern-syntax). You should modify that path only if you are using a custom `Gymfile`. The default is `ios/build/App.ipa`.
+- `releaseChannel` specifies release channel for `expo-updates` package if it's installed ([learn more on this here](../distribution/release-channels.md))
 
 #### Examples
 
@@ -153,21 +182,36 @@ If you'd like to build your iOS project with a custom `Gymfile` ([learn more on 
 {
   "workflow": "generic",
   "artifactPath": /* @info determined by output_directory and output_name in Gymfile */ "ios/my/build/directory/RNApp.ipa" /* @end */
-
 }
 ```
 
 ### Managed Project
 
-Managed projects are not supported at the moment but the profile's schema is going to look like this:
+The schema of a build profile for a managed iOS project looks like this:
 
 ```json
 {
   "workflow": "managed",
   "credentialsSource": "local" | "remote" | "auto", // default: "auto"
-  "buildType": "archive" | "simulator" // default: "archive"
+  "releaseChannel": string | undefined // default: undefined
 }
 ```
+
+- `"workflow": "generic"` indicates that your project is a generic one.
+- `credentialsSource` defines the source of credentials for this build profile. If you want to take advantage of your own `credentials.json` file, set this to `local` ([learn more on this here](advanced-credentials-configuration.md)). If you want to use the credentials Expo already has stored for you, choose `remote`. If you're not sure what to do but you probably won't be running builds from a CI, choose `auto` (this is the default option).
+- `releaseChannel` specifies release channel for `expo-updates` package if it's installed ([learn more on this here](../distribution/release-channels.md))
+
+#### Examples
+
+This is the minimal working example. Expo CLI will ask you for the app's credentials and you'll receive an archive containing the `ios/build/App.ipa` file.
+
+```json
+{
+  "workflow": "managed"
+}
+```
+
+For now manged builds for iOS do not provide any options specific for this workflow (only the ones common for all build types)
 
 ## Overall Example
 
