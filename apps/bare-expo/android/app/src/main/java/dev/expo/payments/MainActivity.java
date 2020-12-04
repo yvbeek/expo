@@ -1,7 +1,6 @@
 package dev.expo.payments;
 
 import android.content.Intent;
-import android.os.Bundle;
 
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
@@ -28,15 +27,13 @@ public class MainActivity extends DevMenuAwareReactActivity {
       protected ReactRootView createRootView() {
         return new RNGestureHandlerEnabledRootView(MainActivity.this);
       }
-
-      @Override
-      protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-      }
     };
 
     if (MainApplication.USE_DEV_CLIENT) {
-      return DevelopmentClientController.wrapReactActivityDelegate(this, () -> delegate);
+      return DevelopmentClientController.wrapReactActivityDelegate(
+        this,
+        () -> new ReactActivityDelegate(this, getMainComponentName())
+      );
     }
 
     return delegate;

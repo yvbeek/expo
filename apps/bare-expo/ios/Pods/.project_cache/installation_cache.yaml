@@ -310,7 +310,6 @@ CACHE_KEYS:
         :release: c66fa0d2cbb00c3a5517658d5d28a97d
     CHECKSUM: d646c74a8db111dbe272fd0d48b988049eee2da0
     FILES:
-      - "../../../../packages/expo-dev-menu/assets/dev-menu-packager-host"
       - "../../../../packages/expo-dev-menu/assets/EXDevMenuApp.ios.js"
       - "../../../../packages/expo-dev-menu/assets/Ionicons.ttf"
       - "../../../../packages/expo-dev-menu/assets/MaterialCommunityIcons.ttf"
