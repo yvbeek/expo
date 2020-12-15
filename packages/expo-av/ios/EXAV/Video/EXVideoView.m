@@ -540,6 +540,13 @@ static NSString *const EXAVFullScreenViewControllerClassName = @"AVFullScreenVie
 
 - (void)_updateNativeResizeMode
 {
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [self _updateNativeResizeModeInternal];
+  });
+}
+
+- (void)_updateNativeResizeModeInternal
+{
   if (_useNativeControls) {
     if (_playerViewController) {
       [_playerViewController setVideoGravity:_nativeResizeMode];
